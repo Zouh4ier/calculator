@@ -5,35 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 
     <div class="container">
         <div class="output">
-            <textarea name="input" id="input"></textarea>
+            <textarea name="output" id="output"></textarea>
         </div>
         <div class="input">
             <div class="numbers">
-                <button class="one">1</button>
-                <button class="two">2</button>
-                <button class="three">3</button>
-                <button class="four">4</button>
-                <button class="five">5</button>
-                <button class="six">6</button>
-                <button class="seven">7</button>
-                <button class="eight">8</button>
-                <button class="nine">9</button>
-                <button class="zero">0</button>
+                <button class="number" >1</button>
+                <button class="number" value="2">2</button>
+                <button class="number" value="3">3</button>
+                <button class="number" value="4">4</button>
+                <button class="number" value="5">5</button>
+                <button class="number" value="6">6</button>
+                <button class="number" value="7">7</button>
+                <button class="number" value="8">8</button>
+                <button class="number" value="9">9</button>
+                <button class="number" value="0">0</button>
             </div>
             <div class="operators">
-                <button class="add">+</button>
-                <button class="substract">-</button>
-                <button class="multiply">x</button>
-                <button class="divide">:</button>
+                <button class="add" value="+">+</button>
+                <button class="substract" value="-">-</button>
+                <button class="multiply" value="*">x</button>
+                <button class="divide" value="/">:</button>
             </div>
         </div>
-        <button class="equal" style="background-color: orange;">=</button>
+        <div class="bottom">
+            <button class="equal" style="background-color: orange;">=</button>
+            <button class="clear" >C</button>
+        </div>
     </div>
     
 </body>

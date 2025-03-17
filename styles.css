@@ -25,7 +25,7 @@
     gap: 3px;
 }
 
-#input{
+#output{
     width:395px;
     height: 150px;
 }
@@ -36,4 +36,16 @@ button{
 }
 .operators{
     padding: 0px;
+}
+
+.bottom{
+    display: flex;
+    padding: 10px 18px;
+}
+
+.clear{
+    flex: 1;
+}
+.equal{
+    flex: 2;
 }
