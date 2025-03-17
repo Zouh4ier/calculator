@@ -1,0 +1,39 @@
+.container{
+    width: 400px;
+    height: 600px;
+    margin: auto;
+    background-color: aquamarine;
+}
+
+.input{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.numbers{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:3px;
+}
+
+.operators{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3px;
+}
+
+#input{
+    width:395px;
+    height: 150px;
+}
+
+button{
+    width: 80px;
+    height: 80px;
+}
+.operators{
+    padding: 0px;
+}
