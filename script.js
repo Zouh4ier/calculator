@@ -19,7 +19,6 @@ let second='';
 let op="";
 
 
-
 function operate(num1,num2,operator){
     let result=0;
     switch(operator){
@@ -40,12 +39,12 @@ function operate(num1,num2,operator){
 }
 
 
-
 const output= document.querySelector('#output');
 const number=document.querySelector('.numbers');
 const operator=document.querySelector('.operators');
 const equal=document.querySelector('.equal');
 const clear=document.querySelector('.clear');
+const decimal = document.querySelector('.decimal');
 
 number.addEventListener('click',(event)=>{  
     let target=event.target;
@@ -67,6 +66,7 @@ function inputHandler(number){
     }
 }
 
+// Handles expressions with more than one operator
 function operatorHandler(oper){
     if (op==''){
         op=oper;
@@ -80,6 +80,29 @@ function operatorHandler(oper){
 }
 
 
+
+//This function helps to avoid having more than one decimal in a number
+function decimalCheck(){
+    if(first.includes('.') && op==''){
+        return false;
+    }else if(second.includes('.') && op!='' ) {
+        return false;
+    }else {
+        return true;
+    }
+}
+
+//determines the place of decimal point when the decimal button is clicked
+function decimalHnadler(decimal){
+    if(op=='' && decimalCheck()){
+        first=first+decimal;
+        output.textContent+=decimal;
+    } else if(op!='' && decimalCheck()){
+        second=second+decimal;
+        output.textContent+=decimal;
+    }
+}
+
 equal.addEventListener('click',()=>{
     if (op=='' || first=='' || second==''){
         alert("invalid input");
@@ -91,7 +114,7 @@ equal.addEventListener('click',()=>{
         first=+first;
         second=+second;
         let res=operate(first,second,op);
-        output.textContent= res;
+        output.textContent= Math.round(res*10)/10;
     }
  })
 
@@ -101,4 +124,11 @@ clear.addEventListener('click',()=>{
     second='';
     op='';
     output.textContent='';
+})
+
+
+
+decimal.addEventListener('click',(event)=>{
+    let target=event.target;
+    decimalHnadler(target.innerText);
 })
